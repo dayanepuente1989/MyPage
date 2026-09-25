@@ -163,7 +163,7 @@ about:
   # file name here, e.g.  image: "assets/img/harvard-mcz.jpg".
   # Leave image empty ("") to hide the photo.
   photo:
-    image: ""
+    image: "assets/img/harvard-mcz.jpg"
     alt:
       en: "Dayane examining bird specimens at a museum collection table."
       es: "Dayane revisando especímenes de aves en la mesa de una colección científica."
