@@ -1,0 +1,424 @@
+{%- comment -%}
+  Page template. You normally don't need to edit this file:
+  all text and pictures come from _data/content.yml.
+{%- endcomment -%}
+{%- assign c = site.data.content -%}
+{%- assign R = page.root -%}
+{%- if page.lang == "es" -%}{%- assign other_lang = "en" -%}{%- else -%}{%- assign other_lang = "es" -%}{%- endif -%}
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% include t.html v=c.seo.title plain=true %}</title>
+  <meta name="description" content="{% include t.html v=c.seo.description plain=true %}">
+  <meta name="author" content="{{ c.person.name | escape }}">
+  <meta name="theme-color" content="#0e0a0b">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% include t.html v=c.seo.title plain=true %}">
+  <meta property="og:description" content="{% include t.html v=c.seo.description plain=true %}">
+  <meta property="og:image" content="{{ R }}{{ c.hero.image }}">
+  <meta property="og:locale" content="{% if page.lang == 'es' %}es_MX{% else %}en_US{% endif %}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="alternate" hreflang="en" href="{{ R | default: './' }}">
+  <link rel="alternate" hreflang="es" href="{{ R }}es/">
+
+  <link rel="icon" href="{{ R }}assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ R }}assets/css/style.css">
+  <script>
+    document.documentElement.classList.add('js');
+    {%- if page.lang == "en" %}
+    // First visit from a Spanish-language browser: open the Spanish version.
+    // Once someone picks a language with the EN/ES switch, that choice wins.
+    (function () {
+      try {
+        if (!localStorage.getItem('lang') && /^es\b/i.test(navigator.language || '')) {
+          location.replace('es/' + location.hash);
+        }
+      } catch (e) {}
+    })();
+    {%- endif %}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{% include t.html v=c.ui.skip %}</a>
+
+  <!-- ============ Navigation ============ -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="{% include t.html v=c.ui.main_nav plain=true %}">
+      <a class="brand" href="#top" aria-label="{{ c.person.short_name | escape }}, {% include t.html v=c.ui.home plain=true %}">
+        <svg class="brand__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <span>{{ c.person.short_name }}</span>
+      </a>
+
+      <div class="lang" role="group" aria-label="{% include t.html v=c.ui.language plain=true %}">
+        <a href="{{ R | default: './' }}" hreflang="en" lang="en" data-lang="en"{% if page.lang == "en" %} aria-current="page"{% endif %}>EN</a>
+        <a href="{{ R }}es/" hreflang="es" lang="es" data-lang="es"{% if page.lang == "es" %} aria-current="page"{% endif %}>ES</a>
+      </div>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="visually-hidden">{% include t.html v=c.ui.menu %}</span>
+        <span class="nav__bars" aria-hidden="true"></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        {%- for item in c.nav %}
+        <li><a href="#{{ item.id }}">{% include t.html v=item.label %}</a></li>
+        {%- endfor %}
+        <li><a class="nav__cv" href="{{ R }}{{ c.cv.file }}" download="{{ c.cv.download_name }}">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img src="{{ R }}{{ c.hero.image }}" alt="{% include t.html v=c.hero.image_alt plain=true %}">
+      </div>
+
+      <div class="hero__inner container">
+        <div class="hero__text">
+          {%- assign badge_text = c.hero.badge.text[page.lang] | default: c.hero.badge.text.en %}
+          {%- if badge_text and badge_text != "" %}
+          <a class="pill" href="{{ c.hero.badge.link | default: '#news' }}">
+            <span class="pill__tag">{% include t.html v=c.hero.badge.tag %}</span>
+            <span class="pill__long">{% include t.html v=c.hero.badge.text %}</span>
+            <span class="pill__short">{% include t.html v=c.hero.badge.text_short %}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          {%- endif %}
+          <p class="eyebrow">{% include t.html v=c.person.role %}</p>
+          {%- assign name_words = c.person.name | split: " " %}
+          {%- assign half = name_words.size | divided_by: 2 %}
+          <h1 id="hero-title">{% for w in name_words %}{{ w }}{% if forloop.index == half %}<br>{% elsif forloop.last == false %} {% endif %}{% endfor %}</h1>
+          <p class="hero__lede">{% include t.html v=c.hero.lede %}</p>
+
+          <svg class="spectrogram" viewBox="0 0 520 80" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="trace" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#e9c46a"/>
+                <stop offset="1" stop-color="#ff5b52"/>
+              </linearGradient>
+            </defs>
+            <g class="spectrogram__grid">
+              <line x1="0" x2="520" y1="20" y2="20"/>
+              <line x1="0" x2="520" y1="40" y2="40"/>
+              <line x1="0" x2="520" y1="60" y2="60"/>
+              <line class="spectrogram__axis" x1="0" x2="520" y1="77" y2="77"/>
+            </g>
+            <g class="spectrogram__traces" stroke="url(#trace)">
+              <path pathLength="1" d="M14 64 C22 62 30 40 44 34"/>
+              <path pathLength="1" d="M58 56 C64 50 72 50 80 58"/>
+              <path pathLength="1" d="M94 62 C106 58 114 18 128 16 C140 15 150 30 160 44"/>
+              <path pathLength="1" d="M189 64 C197 62 205 40 219 34"/>
+              <path pathLength="1" d="M233 56 C239 50 247 50 255 58"/>
+              <path pathLength="1" d="M269 62 C281 58 289 18 303 16 C315 15 325 30 335 44"/>
+              <path pathLength="1" d="M364 64 C372 62 380 40 394 34"/>
+              <path pathLength="1" d="M408 56 C414 50 422 50 430 58"/>
+              <path pathLength="1" d="M444 62 C456 58 464 18 478 16 C490 15 500 30 510 44"/>
+            </g>
+          </svg>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#research">{% include t.html v=c.hero.button %}</a>
+            <a class="btn btn--ghost" href="{{ R }}{{ c.cv.file }}" download="{{ c.cv.download_name }}">{% include t.html v=c.cv.button %}</a>
+          </div>
+          <p class="hero__affil">{% include t.html v=c.person.affiliation %}</p>
+        </div>
+      </div>
+
+      <p class="hero__caption">{% include t.html v=c.hero.caption %}</p>
+    </section>
+
+    <!-- ============ News ============ -->
+    <section class="section section--news" id="news" aria-labelledby="news-title">
+      <div class="container">
+        <div class="news">
+          <article class="news__feature" data-reveal>
+            <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span> {% include t.html v=c.news.kicker %}</p>
+            <h2 id="news-title">{% include t.html v=c.news.feature.title %}</h2>
+            <p>{% include t.html v=c.news.feature.text %}</p>
+          </article>
+
+          <ul class="news__list" data-reveal>
+            {%- for item in c.news.items %}
+            <li>
+              <span class="news__year">{{ item.year }}</span>
+              <p>{% include t.html v=item.text %}</p>
+            </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ About ============ -->
+    {%- assign n_talks = 0 %}
+    {%- for t in c.talks.presentations %}{% assign n_talks = n_talks | plus: t.venues.size %}{% endfor %}
+    {%- assign n_meetings = 0 %}
+    {%- for m in c.talks.meetings %}{% assign n_meetings = n_meetings | plus: m.events.size %}{% endfor %}
+    {%- assign first_meeting_year = c.talks.meetings | map: "year" | sort | first %}
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker"><span class="kicker__num">01</span> {% include t.html v=c.about.kicker %}</p>
+          <h2 id="about-title">{% include t.html v=c.about.title %}</h2>
+        </div>
+
+        <div class="about">
+          <div class="about__body" data-reveal>
+            {% include t.html v=c.about.bio block=true %}
+
+            <h3 class="subhead">{% include t.html v=c.about.education_title %}</h3>
+            <ol class="edu">
+              {%- for e in c.about.education %}
+              <li>
+                <span class="edu__degree">{% include t.html v=e.degree %}</span>
+                <span class="edu__place">{% include t.html v=e.place %}{% if e.badge %} · <span class="badge">{% include t.html v=e.badge %}</span>{% endif %}</span>
+              </li>
+              {%- endfor %}
+            </ol>
+          </div>
+
+          <div class="about__side" data-reveal>
+            {%- if c.about.photo.image and c.about.photo.image != "" %}
+            <figure class="portrait">
+              <img src="{{ R }}{{ c.about.photo.image }}" alt="{% include t.html v=c.about.photo.alt plain=true %}" loading="lazy">
+              <figcaption>{% include t.html v=c.about.photo.caption %}</figcaption>
+            </figure>
+            {%- endif %}
+
+            <aside class="facts" aria-label="{% include t.html v=c.ui.quick_facts plain=true %}">
+              <dl>
+                {%- for f in c.about.facts %}
+                <div>
+                  <dt>{% include t.html v=f.label %}</dt>
+                  <dd>{% include t.html v=f.value %}</dd>
+                </div>
+                {%- endfor %}
+              </dl>
+              <ul class="stats">
+                <li><strong>{{ n_talks }}</strong><span>{% include t.html v=c.about.stats.talks %}</span></li>
+                <li><strong>{{ n_meetings }}</strong><span>{% include t.html v=c.about.stats.meetings %} {{ first_meeting_year }}</span></li>
+                <li><strong>{{ c.outreach.training.size }}</strong><span>{% include t.html v=c.about.stats.courses %}</span></li>
+                <li><strong>{{ c.awards.items.size }}</strong><span>{% include t.html v=c.about.stats.awards %}</span></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Interlude ============ -->
+    <section class="interlude">
+      <div class="container">
+        <blockquote data-reveal>
+          <p>{% include t.html v=c.quote %}</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ Research ============ -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker"><span class="kicker__num">02</span> {% include t.html v=c.research.kicker %}</p>
+          <h2 id="research-title">{% include t.html v=c.research.title %}</h2>
+          <ul class="chips chips--interests">
+            {%- for i in c.research.interests %}
+            <li>{% include t.html v=i %}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+
+        <div class="projects">
+          {%- for p in c.research.projects %}
+          <article class="project{% if p.featured %} project--featured{% endif %}" data-reveal>
+            <p class="project__label">{% include t.html v=p.label %}</p>
+            <h3>{% include t.html v=p.title %}</h3>
+            <p>{% include t.html v=p.text %}</p>
+            {%- if p.questions %}
+            <ul class="questions">
+              {%- for q in p.questions %}
+              <li>{% include t.html v=q %}</li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+            {%- if p.tags %}
+            <ul class="chips">
+              {%- for tag in p.tags %}<li>{% include t.html v=tag %}</li>{% endfor %}
+            </ul>
+            {%- endif %}
+          </article>
+          {%- endfor %}
+        </div>
+
+        <div class="toolkit" data-reveal>
+          <h3 class="subhead">{% include t.html v=c.research.toolkit_title %}</h3>
+          <div class="toolkit__grid">
+            {%- for g in c.research.toolkit %}
+            <div>
+              <h4>{% include t.html v=g.group %}</h4>
+              <ul class="chips">{% for i in g.items %}<li>{% include t.html v=i %}</li>{% endfor %}</ul>
+            </div>
+            {%- endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Publications & talks ============ -->
+    <section class="section section--alt" id="talks" aria-labelledby="talks-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker"><span class="kicker__num">03</span> {% include t.html v=c.talks.kicker %}</p>
+          <h2 id="talks-title">{% include t.html v=c.talks.title %}</h2>
+        </div>
+
+        <h3 class="subhead" data-reveal>{% include t.html v=c.talks.publications_title %}</h3>
+        {%- for pub in c.talks.publications %}
+        <article class="pub" data-reveal>
+          <p class="pub__authors">{% include t.html v=pub.authors %}{% if pub.year %} ({{ pub.year }}){% endif %}</p>
+          <p class="pub__title">{% if pub.link %}<a href="{{ pub.link }}">{% include t.html v=pub.title %}</a>{% else %}{% include t.html v=pub.title %}{% endif %}</p>
+          <p class="pub__venue">{% include t.html v=pub.venue %}</p>
+        </article>
+        {%- endfor %}
+
+        <h3 class="subhead" data-reveal>{% include t.html v=c.talks.presentations_title %}</h3>
+        <ol class="talks" data-reveal>
+          {%- for t in c.talks.presentations %}
+          <li>
+            <span class="talks__year">{{ t.year }}</span>
+            <div>
+              <p class="talks__title">{% include t.html v=t.title %}</p>
+              <p class="talks__venue">{% for v in t.venues %}{% include t.html v=v %}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+            </div>
+          </li>
+          {%- endfor %}
+        </ol>
+
+        <details class="more" data-reveal>
+          <summary>{% include t.html v=c.talks.meetings_title %} <span class="more__count">{{ n_meetings }}</span></summary>
+          <dl class="meetings">
+            {%- for m in c.talks.meetings %}
+            <div><dt>{{ m.year }}</dt><dd>{% for e in m.events %}{% include t.html v=e %}{% unless forloop.last %} · {% endunless %}{% endfor %}</dd></div>
+            {%- endfor %}
+          </dl>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ Awards ============ -->
+    {%- assign phases = "gibbous,quarter,crescent,new,crescent moon--waning,quarter moon--waning,gibbous moon--waning,full" | split: "," %}
+    <section class="section" id="awards" aria-labelledby="awards-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker"><span class="kicker__num">04</span> {% include t.html v=c.awards.kicker %}</p>
+          <h2 id="awards-title">{% include t.html v=c.awards.title %}</h2>
+        </div>
+
+        <ol class="timeline" data-reveal>
+          {%- assign phase_i = 0 %}
+          {%- for a in c.awards.items %}
+          {%- if a.highlight %}
+            {%- assign phase = "full" %}
+          {%- else %}
+            {%- assign idx = phase_i | modulo: phases.size %}
+            {%- assign phase = phases[idx] %}
+            {%- assign phase_i = phase_i | plus: 1 %}
+          {%- endif %}
+          <li class="timeline__item{% if a.highlight %} timeline__item--new{% endif %}">
+            <span class="moon moon--{{ phase }}" aria-hidden="true"></span>
+            <span class="timeline__when">{% include t.html v=a.when %}</span>
+            <div>
+              <p class="timeline__what">{% include t.html v=a.title %}</p>
+              <p class="timeline__where">{% include t.html v=a.where %}</p>
+            </div>
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Outreach & training ============ -->
+    <section class="section section--alt" id="outreach" aria-labelledby="outreach-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker"><span class="kicker__num">05</span> {% include t.html v=c.outreach.kicker %}</p>
+          <h2 id="outreach-title">{% include t.html v=c.outreach.title %}</h2>
+        </div>
+
+        <div class="outreach">
+          <div data-reveal>
+            <h3 class="subhead">{% include t.html v=c.outreach.outreach_title %}</h3>
+            <ul class="cards">
+              {%- for o in c.outreach.items %}
+              <li class="card">
+                <p class="card__meta">{% include t.html v=o.meta %}</p>
+                <p class="card__title">{% include t.html v=o.title %}</p>
+                {%- if o.text %}
+                <p>{% include t.html v=o.text %}</p>
+                {%- endif %}
+              </li>
+              {%- endfor %}
+            </ul>
+          </div>
+
+          <div data-reveal>
+            <h3 class="subhead">{% include t.html v=c.outreach.training_title %}</h3>
+            <ul class="training">
+              {%- for tr in c.outreach.training %}{% if tr.selected %}
+              <li><span>{{ tr.year }}</span> {% include t.html v=tr.title %}{% if tr.where %} <em>{% include t.html v=tr.where %}</em>{% endif %}</li>
+              {%- endif %}{% endfor %}
+            </ul>
+
+            <details class="more">
+              <summary>{% include t.html v=c.outreach.all_training %} <span class="more__count">{{ c.outreach.training.size }}</span></summary>
+              <ul class="training training--full">
+                {%- for tr in c.outreach.training %}
+                <li><span>{{ tr.year }}</span> {% include t.html v=tr.title %}{% if tr.where %} <em>{% include t.html v=tr.where %}</em>{% endif %}</li>
+                {%- endfor %}
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__inner" data-reveal>
+        <div class="contact__moon" aria-hidden="true"></div>
+        <p class="kicker"><span class="kicker__num">06</span> {% include t.html v=c.contact.kicker %}</p>
+        <h2 id="contact-title">{% include t.html v=c.contact.title %}</h2>
+        <p class="contact__lede">{% include t.html v=c.contact.text %}</p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:{{ c.person.email }}">{{ c.person.email }}</a>
+          <a class="btn btn--ghost" href="{{ R }}{{ c.cv.file }}" download="{{ c.cv.download_name }}">{% include t.html v=c.cv.button_long %}</a>
+        </div>
+        <address class="contact__address">
+          {%- for line in c.contact.address %}
+          {% include t.html v=line %}{% unless forloop.last %}<br>{% endunless %}
+          {%- endfor %}
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>{{ site.time | date: "%Y" }}</span> {{ c.person.name }}</p>
+      <p>{% include t.html v=c.footer.photo_credit %}</p>
+      <a href="#top">{% include t.html v=c.ui.back_to_top %}</a>
+    </div>
+  </footer>
+
+  <script src="{{ R }}assets/js/main.js" defer></script>
+</body>
+</html>

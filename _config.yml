@@ -1,0 +1,11 @@
+# Site settings for GitHub Pages (Jekyll).
+# Page text and pictures are edited in _data/content.yml, not here.
+
+title: "Dayane Arlette Puente Puente"
+markdown: kramdown
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

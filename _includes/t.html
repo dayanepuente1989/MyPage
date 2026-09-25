@@ -1,0 +1,16 @@
+{%- comment -%}
+  Prints one piece of text in the page's language.
+  Usage: {% include t.html v=some.value %}   (inline; *italics* allowed)
+         {% include t.html v=some.value block=true %}   (paragraphs)
+         {% include t.html v=some.value plain=true %}   (for attributes)
+  A value can be a plain string (same in both languages) or have en/es keys.
+{%- endcomment -%}
+{%- assign _t = include.v -%}
+{%- if _t.en or _t.es -%}{%- assign _t = _t[page.lang] | default: _t.en -%}{%- endif -%}
+{%- if include.plain -%}
+{{- _t | remove: '*' | escape -}}
+{%- elsif include.block -%}
+{{- _t | markdownify -}}
+{%- else -%}
+{{- _t | markdownify | remove: '<p>' | remove: '</p>' | strip -}}
+{%- endif -%}

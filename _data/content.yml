@@ -1,0 +1,654 @@
+# =====================================================================
+#  WEBSITE CONTENT: every word and picture on the site lives here.
+#
+#  How to edit (on github.com):
+#    1. Open this file and click the pencil icon.
+#    2. Change the text between the quotes, then "Commit changes".
+#    3. Wait 1–2 minutes and refresh the website.
+#
+#  Rules of thumb:
+#    • "en:" is the English text, "es:" is the Spanish text.
+#      A value with no en/es (e.g.  venue: "ATBC") is used in both languages.
+#    • Keep the double quotes around text. Inside the text, use curly
+#      quotes “like this” instead of straight ones.
+#    • *asterisks* make italics (scientific names), **double** make bold.
+#    • Indentation (spaces at the start of lines) matters: copy an
+#      existing item, including its "-" and spaces, when adding a new one.
+#    • To change a picture: upload it to the  assets/img  folder, then
+#      put its file name in the matching  image:  line below.
+#    • Lists are shown in the order written here (newest first).
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+#  Basic details
+# ---------------------------------------------------------------------
+person:
+  name: "Dayane Arlette Puente Puente"
+  short_name: "Dayane Puente"
+  email: "dpuentep2300@alumno.ipn.mx"
+  role:
+    en: "PhD Candidate · Bioacoustics & Behavioral Ecology"
+    es: "Doctorante · Bioacústica y Ecología del Comportamiento"
+  affiliation:
+    en: "Instituto Politécnico Nacional · CIIDIR Unidad Oaxaca, Mexico"
+    es: "Instituto Politécnico Nacional · CIIDIR Unidad Oaxaca, México"
+
+# Text shown in the browser tab and in link previews.
+seo:
+  title:
+    en: "Dayane Arlette Puente Puente · Bird Ecology & Bioacoustics"
+    es: "Dayane Arlette Puente Puente · Ecología de Aves y Bioacústica"
+  description:
+    en: "PhD candidate in the Laboratory of Bioacoustics and Behavioral Ecology at IPN CIIDIR Oaxaca, Mexico, studying nightjars, bird vocal activity and human–wildlife interactions."
+    es: "Doctorante en el Laboratorio de Bioacústica y Ecología del Comportamiento del IPN CIIDIR Oaxaca, México. Estudia tapacaminos, actividad vocal de aves e interacciones humano–fauna."
+
+# The CV file. To update it, upload the new PDF to  assets/cv  and change
+# "file" (or upload it with exactly the same name to replace the old one).
+# "download_name" is the name the file gets on the visitor's computer.
+cv:
+  file: "assets/cv/CV_Dayane_Arlette_Puente.pdf"
+  download_name: "CV_Dayane_Arlette_Puente_Puente.pdf"
+  button:
+    en: "Download CV"
+    es: "Descargar CV"
+  button_long:
+    en: "Download CV (PDF)"
+    es: "Descargar CV (PDF, en inglés)"
+
+
+# ---------------------------------------------------------------------
+#  Menu and small interface labels
+# ---------------------------------------------------------------------
+nav:
+  - id: about
+    label: { en: "About", es: "Sobre mí" }
+  - id: research
+    label: { en: "Research", es: "Investigación" }
+  - id: talks
+    label: { en: "Talks", es: "Ponencias" }
+  - id: awards
+    label: { en: "Awards", es: "Premios" }
+  - id: outreach
+    label: { en: "Outreach", es: "Divulgación" }
+  - id: contact
+    label: { en: "Contact", es: "Contacto" }
+
+ui:
+  skip: { en: "Skip to content", es: "Saltar al contenido" }
+  menu: { en: "Menu", es: "Menú" }
+  main_nav: { en: "Main", es: "Principal" }
+  language: { en: "Language", es: "Idioma" }
+  home: { en: "home", es: "inicio" }
+  quick_facts: { en: "Quick facts", es: "Datos rápidos" }
+  back_to_top: { en: "Back to top ↑", es: "Volver arriba ↑" }
+
+
+# ---------------------------------------------------------------------
+#  Top of the page (hero)
+# ---------------------------------------------------------------------
+hero:
+  image: "assets/img/mexican-whip-poor-will.jpg"
+  image_alt:
+    en: "Close-up of a Mexican Whip-poor-will under red light, showing its large dark eye, mottled plumage and long rictal bristles around the bill."
+    es: "Acercamiento de un tapacamino cuerporruín mexicano bajo luz roja: su gran ojo oscuro, su plumaje moteado y las largas cerdas alrededor del pico."
+  caption:
+    en: "Mexican Whip-poor-will · *Antrostomus arizonae* · photographed under red light"
+    es: "Tapacamino cuerporruín mexicano · *Antrostomus arizonae* · fotografiado con luz roja"
+  # Small highlighted link above the name. Leave "text" empty to hide it.
+  badge:
+    tag: { en: "New", es: "Nuevo" }
+    text:
+      en: "Research stay at the University of Illinois"
+      es: "Estancia de investigación en la Universidad de Illinois"
+    text_short:
+      en: "Research stay at Illinois"
+      es: "Estancia en Illinois"
+    link: "#news"
+  lede:
+    en: "I study bird ecology through sound, from nightjars singing in the moonlit mountains of Oaxaca to the birds that share farmers’ maize fields."
+    es: "Estudio la ecología de las aves a través del sonido: desde los tapacaminos que cantan bajo la luna en las montañas de Oaxaca hasta las aves que comparten los maizales con los agricultores."
+  button:
+    en: "Explore my research"
+    es: "Conoce mi investigación"
+
+
+# ---------------------------------------------------------------------
+#  Latest news
+# ---------------------------------------------------------------------
+news:
+  kicker: { en: "Latest news", es: "Noticias recientes" }
+  feature:
+    title:
+      en: "Full scholarship for a research stay at the University of Illinois Urbana-Champaign"
+      es: "Beca completa para una estancia de investigación en la Universidad de Illinois Urbana-Champaign"
+    text:
+      en: "I have been awarded a full scholarship for a one-month doctoral research stay at the University of Illinois Urbana-Champaign, working with Dr. Ward. The visit builds on the bird telemetry and antenna installation training I completed at Illinois in 2024."
+      es: "Obtuve una beca completa para realizar una estancia doctoral de investigación de un mes en la Universidad de Illinois Urbana-Champaign, con el Dr. Ward. La visita da continuidad a la capacitación en telemetría de aves e instalación de antenas que realicé en Illinois en 2024."
+  items:
+    - year: 2025
+      text:
+        en: "Presented *“Vocal activity and prey availability in two nightjar species (Aves: Caprimulgidae) in Mexico’s Neotropical Highlands”* at ATBC 2025."
+        es: "Presenté *“Vocal activity and prey availability in two nightjar species (Aves: Caprimulgidae) in Mexico’s Neotropical Highlands”* en el congreso ATBC 2025."
+    - year: 2024
+      text:
+        en: "Gave the talk *“Singing in the moonlight”* at the Global Nightjar Network meeting."
+        es: "Impartí la charla *“Singing in the moonlight”* en la reunión de la Global Nightjar Network."
+    - year: 2024
+      text:
+        en: "Completed field techniques training for wildlife studies at UNAM’s Chamela Biological Station."
+        es: "Concluí la capacitación en técnicas de campo para estudios de fauna silvestre en la Estación de Biología Chamela de la UNAM."
+
+
+# ---------------------------------------------------------------------
+#  About
+# ---------------------------------------------------------------------
+about:
+  kicker: { en: "About", es: "Sobre mí" }
+  title:
+    en: "Ornithologist, bioacoustician, *night listener*"
+    es: "Ornitóloga que *escucha la noche*"
+  # Paragraphs: leave an empty line between them.
+  bio:
+    en: |
+      I’m a PhD candidate in Conservation and Sustainable Use of Natural Resources at the Instituto Politécnico Nacional (CIIDIR Unidad Oaxaca), where I work in the **Laboratory of Bioacoustics and Behavioral Ecology**. My research brings together ornithology, bioacoustics and wildlife management: I use bird vocalizations to understand how nocturnal birds behave across mountain landscapes, and I study the relationship between wild birds and the farmers whose crops they feed on.
+
+      My path began in agroecology, continued through wildlife management on the coast of Oaxaca, and now centres on nightjars, a group of cryptic nocturnal birds known mostly by their voices. Along the way I have coordinated urban birdwatching workshops, brought birds and bioacoustics into schools in the Sierra de Oaxaca, and worked in sea turtle and bird banding camps.
+    es: |
+      Soy doctorante en Ciencias en Conservación y Aprovechamiento de Recursos Naturales en el Instituto Politécnico Nacional (CIIDIR Unidad Oaxaca), donde trabajo en el **Laboratorio de Bioacústica y Ecología del Comportamiento**. Mi investigación une la ornitología, la bioacústica y el manejo de fauna silvestre: utilizo las vocalizaciones para entender cómo se comportan las aves nocturnas en los paisajes de montaña, y estudio la relación entre las aves silvestres y los agricultores cuyos cultivos consumen.
+
+      Mi camino comenzó en la agroecología, continuó con el manejo de fauna silvestre en la costa de Oaxaca y hoy se centra en los tapacaminos, un grupo de aves nocturnas y crípticas que conocemos sobre todo por sus voces. En el camino he coordinado talleres de observación de aves urbanas, he llevado las aves y la bioacústica a escuelas de la Sierra de Oaxaca y he trabajado en campamentos tortugueros y de anillamiento de aves.
+
+  # Optional photo shown beside the bio. Upload it to assets/img and put its
+  # file name here, e.g.  image: "assets/img/harvard-mcz.jpg".
+  # Leave image empty ("") to hide the photo.
+  photo:
+    image: ""
+    alt:
+      en: "Dayane examining bird specimens at a museum collection table."
+      es: "Dayane revisando especímenes de aves en la mesa de una colección científica."
+    caption:
+      en: "Visiting researcher at Harvard University’s Museum of Comparative Zoology"
+      es: "Investigadora visitante en el Museo de Zoología Comparada de la Universidad de Harvard"
+
+  education_title: { en: "Education", es: "Formación académica" }
+  education:
+    - degree:
+        en: "PhD in Conservation and Sustainable Use of Natural Resources"
+        es: "Doctorado en Ciencias en Conservación y Aprovechamiento de Recursos Naturales"
+      place: "CIIDIR-IPN Unidad Oaxaca"
+      badge: { en: "In progress", es: "En curso" }
+    - degree:
+        en: "MSc in Wildlife Management"
+        es: "Maestría en Manejo de Fauna Silvestre"
+      place: "Universidad del Mar"
+    - degree:
+        en: "BSc in Agroecological Engineering"
+        es: "Ingeniería Agroecológica"
+      place: "Universidad Autónoma de San Luis Potosí"
+
+  facts:
+    - label: { en: "Lab", es: "Laboratorio" }
+      value:
+        en: "Laboratory of Bioacoustics and Behavioral Ecology"
+        es: "Laboratorio de Bioacústica y Ecología del Comportamiento"
+    - label: { en: "Institution", es: "Institución" }
+      value: "Instituto Politécnico Nacional, CIIDIR Unidad Oaxaca"
+    - label: { en: "Based in", es: "Ubicación" }
+      value: { en: "Oaxaca, Mexico", es: "Oaxaca, México" }
+    - label: { en: "Focus", es: "Enfoque" }
+      value:
+        en: "Nightjars · vocal activity · human–wildlife interactions"
+        es: "Tapacaminos · actividad vocal · interacciones humano–fauna"
+
+  # The numbers are counted automatically from the lists further down.
+  stats:
+    talks: { en: "conference presentations", es: "presentaciones en congresos" }
+    meetings: { en: "scientific meetings since", es: "reuniones científicas desde" }
+    courses: { en: "courses & workshops", es: "cursos y talleres" }
+    awards: { en: "awards & scholarships", es: "premios y becas" }
+
+
+# Quote band between About and Research.
+quote:
+  en: "By day, nightjars vanish into the leaf litter. By night, their songs give them away. That is where my work begins: *listening*."
+  es: "De día, los tapacaminos desaparecen entre la hojarasca. De noche, sus cantos los delatan. Ahí comienza mi trabajo: *escuchar*."
+
+
+# ---------------------------------------------------------------------
+#  Research
+# ---------------------------------------------------------------------
+research:
+  kicker: { en: "Research", es: "Investigación" }
+  title:
+    en: "Birds, sound and the people who live alongside them"
+    es: "Aves, sonido y las personas que conviven con ellas"
+  interests:
+    - { en: "Bird ecology & conservation", es: "Ecología y conservación de aves" }
+    - { en: "Bioacoustics & vocal activity", es: "Bioacústica y actividad vocal" }
+    - { en: "Human–wildlife interactions", es: "Interacciones humano–fauna silvestre" }
+    - { en: "Sustainable agriculture & biodiversity", es: "Agricultura sustentable y biodiversidad" }
+    - { en: "Wildlife monitoring & data analysis", es: "Monitoreo de fauna silvestre y análisis de datos" }
+
+  # The first project marked "featured: true" is shown large.
+  projects:
+    - featured: true
+      label:
+        en: "Doctoral research · IPN CIIDIR Oaxaca"
+        es: "Investigación doctoral · IPN CIIDIR Oaxaca"
+      title:
+        en: "Voices of the night: nightjars in Oaxaca’s highlands"
+        es: "Voces de la noche: tapacaminos en las montañas de Oaxaca"
+      text:
+        en: "Nightjars (Caprimulgidae) are hard to see but easy to hear. My doctoral research follows the vocal activity of two montane Neotropical nightjars along an altitudinal gradient in the mountains of Oaxaca, asking how elevation, moonlight and the availability of insect prey shape when and how much they sing. It builds on earlier work on the geographic variation and behavioural ecology of the Mexican Whip-poor-will (*Antrostomus arizonae*)."
+        es: "Los tapacaminos (Caprimulgidae) son difíciles de ver, pero fáciles de escuchar. Mi investigación doctoral sigue la actividad vocal de dos especies de tapacaminos neotropicales de montaña a lo largo de un gradiente altitudinal en las montañas de Oaxaca, y se pregunta cómo la altitud, la luz de la luna y la disponibilidad de insectos presa determinan cuándo y cuánto cantan. Parte de trabajo previo sobre la variación geográfica y la ecología del comportamiento del tapacamino cuerporruín mexicano (*Antrostomus arizonae*)."
+      questions:
+        - { en: "How does vocal activity change with elevation?", es: "¿Cómo cambia la actividad vocal con la altitud?" }
+        - { en: "How does moonlight shape nightly singing?", es: "¿Cómo influye la luz de la luna en el canto nocturno?" }
+        - { en: "Does singing track the availability of prey?", es: "¿El canto sigue la disponibilidad de presas?" }
+      tags:
+        - { en: "Acoustic monitoring", es: "Monitoreo acústico" }
+        - "BirdNET"
+        - "Raven"
+        - "Syrinx"
+        - "R"
+
+    - label:
+        en: "Human–wildlife interactions · Oaxaca"
+        es: "Interacciones humano–fauna · Oaxaca"
+      title:
+        en: "Birds, maize and farmers"
+        es: "Aves, maíz y agricultores"
+      text:
+        en: "Some wild birds feed on maize, a staple crop across rural Oaxaca. I evaluated birds feeding on maize in Santa María Colotepec and the Sierra Madre del Sur, proposed management alternatives, and documented how farmers in the Costa region perceive these birds, a step towards coexistence that works for both people and wildlife."
+        es: "Algunas aves silvestres se alimentan de maíz, un cultivo básico en el Oaxaca rural. Evalué las aves que consumen maíz en Santa María Colotepec y la Sierra Madre del Sur, propuse alternativas de manejo y documenté cómo perciben a estas aves los agricultores de la región Costa: un paso hacia una convivencia que funcione tanto para las personas como para la fauna."
+      tags:
+        - { en: "Social-ecological systems", es: "Sistemas socioecológicos" }
+        - "ATLAS.ti"
+        - { en: "Crop damage assessment", es: "Evaluación de daños a cultivos" }
+
+    - label:
+        en: "Early research · UASLP, San Luis Potosí"
+        es: "Primeras investigaciones · UASLP, San Luis Potosí"
+      title:
+        en: "Roots in agroecology"
+        es: "Raíces en la agroecología"
+      text:
+        en: "My first projects combined farming and wildlife: the breeding ecology of the Barn Swallow (*Hirundo rustica*) at UASLP’s Faculty of Agronomy and Veterinary Medicine, which won second place in the poster presentations at UASLP’s Week of Science in 2018, and the development of two bean varieties under heat stress."
+        es: "Mis primeros proyectos unieron agricultura y fauna: la ecología reproductiva de la golondrina tijereta (*Hirundo rustica*) en la Facultad de Agronomía y Veterinaria de la UASLP, que obtuvo el segundo lugar en la presentación de carteles de la Semana de la Ciencia de la UASLP en 2018, y el desarrollo de dos variedades de frijol bajo estrés por calor."
+      tags:
+        - { en: "Breeding ecology", es: "Ecología reproductiva" }
+        - { en: "Agroecology", es: "Agroecología" }
+
+    - label:
+        en: "Environmental education"
+        es: "Educación ambiental"
+      title:
+        en: "Birds for everyone"
+        es: "Aves para todas y todos"
+      text:
+        en: "I bring birds and bioacoustics into schools in the Sierra de Oaxaca, help create bird- and pollinator-friendly gardens, and have coordinated the Urban Bird Program (PAU) Ojo de Lumbre with CONABIO in San Luis Potosí, running workshops and talks on birdwatching and why birds matter."
+        es: "Llevo las aves y la bioacústica a escuelas de la Sierra de Oaxaca, ayudo a crear jardines amigables para aves y polinizadores, y he coordinado el Programa de Aves Urbanas (PAU) Ojo de Lumbre con la CONABIO en San Luis Potosí, con talleres y pláticas sobre la observación de aves y su importancia."
+      tags:
+        - { en: "Community science", es: "Ciencia ciudadana" }
+        - { en: "Outreach", es: "Divulgación" }
+
+  toolkit_title: { en: "Toolkit", es: "Herramientas" }
+  toolkit:
+    - group: { en: "Bioacoustics", es: "Bioacústica" }
+      items: ["Raven", "Avisoft", "Syrinx", "BirdNET"]
+    - group: { en: "Statistics & modelling", es: "Estadística y modelación" }
+      items: ["R", "SAS", "SigmaPlot", "Distance", "Maxent"]
+    - group: { en: "Spatial & qualitative", es: "Análisis espacial y cualitativo" }
+      items: ["QGIS", "ATLAS.ti"]
+    - group: { en: "Field training", es: "Capacitación de campo" }
+      items:
+        - { en: "Bird banding", es: "Anillamiento de aves" }
+        - { en: "Radio telemetry", es: "Radiotelemetría" }
+        - { en: "Camera trapping", es: "Fototrampeo" }
+        - { en: "Sea turtle monitoring", es: "Monitoreo de tortugas marinas" }
+
+
+# ---------------------------------------------------------------------
+#  Publications & talks
+# ---------------------------------------------------------------------
+talks:
+  kicker: { en: "Publications & talks", es: "Publicaciones y ponencias" }
+  title: { en: "Sharing the science", es: "Compartir la ciencia" }
+
+  publications_title: { en: "Publication", es: "Publicación" }
+  # Add "year:" and "link:" to a publication when you have them, e.g.
+  #   year: 2023
+  #   link: "https://doi.org/..."
+  publications:
+    - authors: "Puente, D.A."
+      title:
+        en: "Farmers’ perception of wild birds consuming maize in the Costa region of Oaxaca."
+        es: "Percepción de los agricultores sobre las aves silvestres que consumen maíz en la región Costa de Oaxaca."
+      venue: "*Boletín de la Sociedad para el Conocimiento y Manejo de Especies*"
+
+  presentations_title: { en: "Conference presentations", es: "Ponencias en congresos" }
+  # One item per talk. List every venue where it was given; each one
+  # counts toward the "conference presentations" number.
+  presentations:
+    - year: 2025
+      title: "Vocal activity and prey availability in two nightjar species (Aves: Caprimulgidae) in Mexico’s Neotropical Highlands"
+      venues:
+        - { en: "Association for Tropical Biology and Conservation (ATBC)", es: "Association for Tropical Biology and Conservation (ATBC)" }
+    - year: 2024
+      title: "Singing in the moonlight: vocal activity in two Neotropical nightjars in the Oaxaca mountains"
+      venues:
+        - "Global Nightjar Network"
+    - year: 2024
+      title:
+        en: "Vocal activity along an altitudinal gradient in two montane Neotropical nightjars"
+        es: "Actividad vocal a lo largo de un gradiente altitudinal en dos tapacaminos neotropicales de montaña"
+      venues:
+        - { en: "IX Mexican Congress of Ecology", es: "IX Congreso Mexicano de Ecología" }
+        - "CIMAPEX 2024"
+    - year: 2023
+      title:
+        en: "Geographic variation and behavioral ecology of the Mexican Whip-poor-will"
+        es: "Variación geográfica y ecología del comportamiento del tapacamino cuerporruín mexicano"
+      venues:
+        - { en: "Polytechnic Symposium", es: "Simposio Politécnico" }
+    - year: 2022
+      title:
+        en: "Evaluation and management of birds feeding on maize crops in Santa María Colotepec, Oaxaca"
+        es: "Evaluación y manejo de aves que se alimentan de cultivos de maíz en Santa María Colotepec, Oaxaca"
+      venues:
+        - "CIMAPEX 2022"
+    - year: 2022
+      title:
+        en: "Farmers’ perception of wild birds consuming maize in the Costa region of Oaxaca"
+        es: "Percepción de los agricultores sobre las aves silvestres que consumen maíz en la región Costa de Oaxaca"
+      venues:
+        - { en: "VIII Mexican Congress of Ecology", es: "VIII Congreso Mexicano de Ecología" }
+    - year: 2021
+      title: "Evaluation and management alternatives of birds that consume corn crops in the Sierra Madre del Sur, Oaxaca"
+      venues:
+        - "The Wildlife Society Annual Conference"
+    - year: 2019
+      title:
+        en: "Breeding of the Barn Swallow at the Faculty of Agronomy and Veterinary Medicine, UASLP"
+        es: "Reproducción de la golondrina tijereta en la Facultad de Agronomía y Veterinaria de la UASLP"
+      venues:
+        - { en: "2nd Conference on Wildlife Management and Conservation", es: "2.º Congreso de Manejo y Conservación de Fauna Silvestre" }
+    - year: 2018
+      title:
+        en: "My internship in the productive sector (SNICS)"
+        es: "Mi estancia en el sector productivo (SNICS)"
+      venues:
+        - { en: "Research Seminar, UASLP", es: "Seminario de Investigación, UASLP" }
+
+  meetings_title: { en: "Scientific meetings attended", es: "Reuniones científicas a las que he asistido" }
+  meetings:
+    - year: 2025
+      events:
+        - "Association for Tropical Biology and Conservation (ATBC)"
+    - year: 2024
+      events:
+        - { en: "XX Congress for the Study and Conservation of Birds in Mexico", es: "XX Congreso para el Estudio y Conservación de las Aves en México" }
+        - { en: "IX Mexican Congress of Ecology", es: "IX Congreso Mexicano de Ecología" }
+        - "Global Nightjar Network"
+    - year: 2022
+      events:
+        - { en: "XVIII Congress for the Study and Conservation of Birds in Mexico", es: "XVIII Congreso para el Estudio y Conservación de las Aves en México" }
+        - { en: "VIII Mexican Congress of Ecology", es: "VIII Congreso Mexicano de Ecología" }
+    - year: 2021
+      events:
+        - "The Wildlife Society Annual Conference"
+        - "RAMSAR"
+    - year: 2019
+      events:
+        - { en: "1st Agroecology Congress", es: "1.er Congreso de Agroecología" }
+        - "Rio Grande Valley Birding Festival"
+        - { en: "2nd Conference on Wildlife Management and Conservation", es: "2.º Congreso de Manejo y Conservación de Fauna Silvestre" }
+        - { en: "National Meeting of Urban Birdwatchers (PAU, CONABIO)", es: "Encuentro Nacional de Observadores de Aves Urbanas (PAU, CONABIO)" }
+    - year: 2018
+      events:
+        - { en: "1st Conference on Wildlife Management and Conservation", es: "1.er Congreso de Manejo y Conservación de Fauna Silvestre" }
+        - "Rio Grande Valley Birding Festival"
+    - year: 2017
+      events:
+        - { en: "National Meeting of Rural Schools", es: "Encuentro Nacional de Escuelas Rurales" }
+
+
+# ---------------------------------------------------------------------
+#  Awards & scholarships (a moon phase marks each one automatically)
+# ---------------------------------------------------------------------
+awards:
+  kicker: { en: "Awards & scholarships", es: "Premios y becas" }
+  title: { en: "Support along the way", es: "Apoyos en el camino" }
+  # "highlight: true" shows the item with a gold "New" style.
+  items:
+    - when: { en: "New", es: "Nuevo" }
+      highlight: true
+      title:
+        en: "Full scholarship for a one-month doctoral research stay"
+        es: "Beca completa para una estancia doctoral de investigación de un mes"
+      where:
+        en: "University of Illinois Urbana-Champaign · hosted by Dr. Ward"
+        es: "Universidad de Illinois Urbana-Champaign · anfitrión: Dr. Ward"
+    - when: { en: "2023 – present", es: "2023 – actualidad" }
+      title:
+        en: "National Graduate Studies Scholarship, PhD"
+        es: "Beca Nacional de Posgrado, Doctorado"
+      where:
+        en: "Consejo Nacional de Ciencia y Tecnología (CONACyT), Mexico"
+        es: "Consejo Nacional de Ciencia y Tecnología (CONACyT), México"
+    - when: "2024"
+      title:
+        en: "Congress registration scholarship"
+        es: "Beca de inscripción a congreso"
+      where: "Association for Tropical Biology and Conservation (ATBC)"
+    - when: "2023"
+      title:
+        en: "Congress registration scholarship and travel award"
+        es: "Beca de inscripción a congreso y apoyo para viaje"
+      where: "CECAM"
+    - when: "2022"
+      title:
+        en: "Congress registration scholarship"
+        es: "Beca de inscripción a congreso"
+      where: "SCME"
+    - when: "2021"
+      title:
+        en: "Equipment grant"
+        es: "Donación de equipo"
+      where: "Idea Wild"
+    - when: "2020 – 2023"
+      title:
+        en: "National Graduate Studies Scholarship, MSc"
+        es: "Beca Nacional de Posgrado, Maestría"
+      where:
+        en: "Consejo Nacional de Ciencia y Tecnología (CONACyT), Mexico"
+        es: "Consejo Nacional de Ciencia y Tecnología (CONACyT), México"
+    - when: "2018"
+      title:
+        en: "Second place, poster presentation: reproductive ecology of the Barn Swallow (*Hirundo rustica*)"
+        es: "Segundo lugar, presentación de cartel: ecología de la reproducción de la golondrina tijereta (*Hirundo rustica*)"
+      where:
+        en: "Week of Science, UASLP"
+        es: "Semana de la Ciencia, UASLP"
+
+
+# ---------------------------------------------------------------------
+#  Outreach & training
+# ---------------------------------------------------------------------
+outreach:
+  kicker: { en: "Outreach & training", es: "Divulgación y formación" }
+  title: { en: "In the field and in the community", es: "En el campo y en la comunidad" }
+
+  outreach_title: { en: "Outreach & volunteering", es: "Divulgación y voluntariado" }
+  items:
+    - meta:
+        en: "CONABIO · San Luis Potosí · 2017 – present"
+        es: "CONABIO · San Luis Potosí · 2017 – actualidad"
+      title:
+        en: "Coordinator, Urban Bird Program (PAU)"
+        es: "Coordinadora, Programa de Aves Urbanas (PAU)"
+      text:
+        en: "Urban bird observation and identification workshops."
+        es: "Talleres de observación e identificación de aves urbanas."
+    - meta: "Sierra de Oaxaca"
+      title:
+        en: "Environmental education in schools"
+        es: "Educación ambiental en escuelas"
+      text:
+        en: "Teaching students about birds and bioacoustics."
+        es: "Enseñanza sobre aves y bioacústica."
+    - meta:
+        en: "Environmental education project"
+        es: "Proyecto de educación ambiental"
+      title:
+        en: "Bird- and pollinator-friendly gardens"
+        es: "Jardines amigables para aves y polinizadores"
+    - meta:
+        en: "Vive Mar · April 2022"
+        es: "Vive Mar · abril de 2022"
+      title:
+        en: "Sea turtle camp and bird banding camp"
+        es: "Campamento tortuguero y campamento de anillamiento de aves"
+    - meta:
+        en: "Flora, Fauna y Cultura de México · June 2016"
+        es: "Flora, Fauna y Cultura de México · junio de 2016"
+      title:
+        en: "Marine turtle monitoring, Xcacel-Xcacelito"
+        es: "Monitoreo de tortugas marinas, Xcacel-Xcacelito"
+
+  training_title: { en: "Selected training", es: "Formación destacada" }
+  all_training: { en: "All continuing education", es: "Toda la formación continua" }
+  # "selected: true" also shows the course in the short list.
+  training:
+    - year: 2024
+      selected: true
+      title:
+        en: "Telemetry and antenna installation for birds"
+        es: "Telemetría e instalación de antenas para aves"
+      where: { en: "University of Illinois", es: "Universidad de Illinois" }
+    - year: 2024
+      selected: true
+      title:
+        en: "Field techniques for wildlife studies: theory, application and analysis"
+        es: "Técnicas de campo para estudios de fauna silvestre: teoría, aplicación y análisis"
+      where: { en: "UNAM, Chamela Biological Station", es: "UNAM, Estación de Biología Chamela" }
+    - year: 2022
+      selected: true
+      title: { en: "Bird banding", es: "Anillamiento de aves" }
+      where: "Tierra de Aves"
+    - year: 2022
+      title:
+        en: "Introduction to socio-ecological systems"
+        es: "Introducción a los sistemas socioecológicos"
+      where: "CentroGeo"
+    - year: 2022
+      title: { en: "ABC of wetlands", es: "ABC de los humedales" }
+      where: "CONANP"
+    - year: 2022
+      selected: true
+      title:
+        en: "Introduction to autonomous recording units (ARUs) and artificial intelligence, webinar"
+        es: "Introducción a las unidades de grabación autónoma (ARU) y la inteligencia artificial, webinar"
+      where: "IBP"
+    - year: 2021
+      title:
+        en: "Long-term bird monitoring in the Maya Mountains of Belize, webinar"
+        es: "Monitoreo de aves a largo plazo en las Montañas Mayas de Belice, webinar"
+      where: "IBP"
+    - year: 2021
+      selected: true
+      title:
+        en: "International Course on Wildlife Tracking"
+        es: "Curso Internacional de Rastreo de Fauna Silvestre"
+      where: "Universidad Autónoma de Morelos"
+    - year: 2021
+      title: { en: "Korean language", es: "Idioma coreano" }
+      where: "Mubang"
+    - year: 2021
+      title: { en: "Bird identification", es: "Identificación de aves" }
+      where: "Tierra de Aves, Manuel Grosselet"
+    - year: 2020
+      title:
+        en: "Animal health and welfare, webinar"
+        es: "Salud y bienestar animal, webinar"
+      where: "Universidad Autónoma de Tlaxcala"
+    - year: 2020
+      title:
+        en: "Introduction to geospatial information use and representation"
+        es: "Introducción al uso y representación de información geoespacial"
+      where: "CentroGeo"
+    - year: 2020
+      title: "Be a Better Birder: Size and Shape"
+      where: "The Cornell Lab of Ornithology"
+    - year: 2020
+      title:
+        en: "Geographic information systems with open-source software"
+        es: "Sistemas de información geográfica con software libre"
+      where: "Celebios"
+    - year: 2019
+      selected: true
+      title: { en: "Camera trapping for wildlife", es: "Fototrampeo de fauna silvestre" }
+      where: "Wildlife Management"
+    - year: 2019
+      title: { en: "Animal Behaviour and Welfare", es: "Comportamiento y bienestar animal" }
+      where: { en: "University of Edinburgh", es: "Universidad de Edimburgo" }
+    - year: 2019
+      title: "eBird Essentials"
+      where: "The Cornell Lab of Ornithology"
+    - year: 2018
+      selected: true
+      title: { en: "Bird identification in 12 steps", es: "Identificación de aves en 12 pasos" }
+      where: "RGV Birding Festival, Steve N. G. Howell"
+    - year: 2018
+      title:
+        en: "Waterfowl management and habitat in Mexico"
+        es: "Manejo de aves acuáticas y su hábitat en México"
+      where: "DUMAC"
+    - year: 2018
+      title:
+        en: "Handling and containment of snakes"
+        es: "Manejo y contención de serpientes"
+      where: "SEGAM"
+    - year: 2018
+      title: { en: "Pfeiffer chromatography", es: "Cromatografía de Pfeiffer" }
+      where: "UAQ"
+    - year: 2018
+      title:
+        en: "Entrepreneurial talent development in agribusiness"
+        es: "Desarrollo de talento emprendedor en agronegocios"
+      where: "SAGARPA"
+    - year: 2017
+      title:
+        en: "Bird identification and data collection on the platform"
+        es: "Identificación de aves y registro de datos en la plataforma"
+      where: "eBird"
+    - year: 2016
+      title:
+        en: "Organic composts and fertilizers"
+        es: "Compostas y abonos orgánicos"
+    - year: 2016
+      title:
+        en: "Sea turtle management and work in turtle camps"
+        es: "Manejo de tortugas marinas y trabajo en campamentos tortugueros"
+      where: "Flora, Fauna y Cultura de México A.C."
+
+
+# ---------------------------------------------------------------------
+#  Contact & footer
+# ---------------------------------------------------------------------
+contact:
+  kicker: { en: "Contact", es: "Contacto" }
+  title: { en: "Let’s talk about birds", es: "Hablemos de aves" }
+  text:
+    en: "I’m completing my PhD and welcome conversations about postdoctoral opportunities, research collaborations, and talks or outreach on birds and bioacoustics."
+    es: "Estoy concluyendo mi doctorado y me interesa conversar sobre oportunidades posdoctorales, colaboraciones de investigación y charlas o actividades de divulgación sobre aves y bioacústica."
+  address:
+    - { en: "Laboratory of Bioacoustics and Behavioral Ecology", es: "Laboratorio de Bioacústica y Ecología del Comportamiento" }
+    - "Instituto Politécnico Nacional, CIIDIR Unidad Oaxaca"
+    - { en: "Oaxaca, Mexico", es: "Oaxaca, México" }
+
+footer:
+  photo_credit:
+    en: "Header photo: Mexican Whip-poor-will (*Antrostomus arizonae*)"
+    es: "Foto de portada: tapacamino cuerporruín mexicano (*Antrostomus arizonae*)"

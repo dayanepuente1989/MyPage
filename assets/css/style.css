@@ -223,9 +223,34 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
 }
+.brand { margin-right: auto; }
+.nav__menu { order: 2; }
+.lang { order: 3; }
+.nav__toggle { order: 4; }
+
+/* EN | ES switch */
+.lang {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+}
+.lang a {
+  min-width: 38px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s, background-color 0.2s;
+}
+.lang a:hover { color: var(--text); }
+.lang a[aria-current="page"] { background: var(--text); color: var(--bg); }
 
 .brand {
   display: inline-flex;
@@ -502,8 +527,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   }
 }
 
+.pill__short { display: none; }
 @media (max-width: 480px) {
   .pill__long { display: none; }
+  .pill__short { display: inline; }
 }
 
 /* ---------- Sections ---------- */
@@ -592,9 +619,29 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .edu__degree { font-family: var(--font-serif); font-size: 1.15rem; }
 .edu__place { color: var(--muted); font-size: 0.95rem; }
 
+.about__side { display: grid; gap: 20px; }
+
+.portrait {
+  margin: 0;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(233, 196, 106, 0.3);
+  background: var(--surface);
+}
+.portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 8px);
+}
+.portrait figcaption {
+  padding: 12px 6px 4px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 .facts {
-  position: sticky;
-  top: calc(var(--header-h) + 24px);
   padding: 28px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
@@ -636,7 +683,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 900px) {
   .about { grid-template-columns: 1fr; }
-  .facts { position: static; }
+  .about__side { max-width: 560px; }
 }
 
 /* ---------- Interlude ---------- */

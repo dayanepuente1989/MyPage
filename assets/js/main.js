@@ -28,6 +28,17 @@
     }
   });
 
+  // EN/ES switch: remember the choice and stay on the same section.
+  document.querySelectorAll('.lang a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      try { localStorage.setItem('lang', a.getAttribute('data-lang')); } catch (err) {}
+      if (location.hash) {
+        e.preventDefault();
+        location.href = a.getAttribute('href') + location.hash;
+      }
+    });
+  });
+
   // Current year in the footer.
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
