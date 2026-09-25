@@ -157,7 +157,7 @@ news:
   # assets/img and put its file name in "image"; a photo with image: ""
   # is not shown. Photos look best in landscape, 4:3 (e.g. 1600 × 1200 px).
   gallery:
-    - image: ""
+    - image: "assets/img/illinois-2025.jpg"
       alt:
         en: "Dayane holding her certificate of completion beside two fellow students and a professor, in front of the flags of the United States and Mexico."
         es: "Dayane con su certificado de finalización junto a dos compañeros y una profesora, frente a las banderas de Estados Unidos y México."
