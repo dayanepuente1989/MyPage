@@ -99,6 +99,20 @@
           <h1 id="hero-title">{% for w in name_words %}{{ w }}{% if forloop.index == half %}<br>{% elsif forloop.last == false %} {% endif %}{% endfor %}</h1>
           <p class="hero__lede">{% include t.html v=c.hero.lede %}</p>
 
+          {%- assign audio = c.hero.audio %}
+          {%- assign has_audio = false %}
+          {%- if audio.file and audio.file != "" %}{% assign has_audio = true %}{% endif %}
+          <div class="song{% if has_audio %} song--playable{% endif %}">
+          {%- if has_audio %}
+          <button class="song__btn" type="button" aria-pressed="false"
+                  aria-label="{% include t.html v=audio.play plain=true %}"
+                  data-play="{% include t.html v=audio.play plain=true %}"
+                  data-pause="{% include t.html v=audio.pause plain=true %}">
+            <svg class="song__icon song__icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="song__icon song__icon--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+          </button>
+          <audio class="song__audio" preload="none" src="{{ R }}{{ audio.file }}"></audio>
+          {%- endif %}
           <svg class="spectrogram" viewBox="0 0 520 80" aria-hidden="true" focusable="false">
             <defs>
               <linearGradient id="trace" x1="0" x2="1" y1="0" y2="0">
@@ -124,6 +138,11 @@
               <path pathLength="1" d="M444 62 C456 58 464 18 478 16 C490 15 500 30 510 44"/>
             </g>
           </svg>
+          {%- assign credit = audio.credit[page.lang] | default: audio.credit.en %}
+          {%- if has_audio and credit and credit != "" %}
+          <p class="song__credit">{% include t.html v=audio.credit %}</p>
+          {%- endif %}
+          </div>
 
           <div class="hero__actions">
             <a class="btn btn--primary" href="#research">{% include t.html v=c.hero.button %}</a>
@@ -155,6 +174,20 @@
             {%- endfor %}
           </ul>
         </div>
+
+        {%- assign photos = c.news.gallery | where_exp: "g", "g.image != ''" %}
+        {%- if photos.size > 0 %}
+        <ul class="gallery" data-reveal>
+          {%- for g in photos %}
+          <li>
+            <figure class="portrait">
+              <img src="{{ R }}{{ g.image }}" alt="{% include t.html v=g.alt plain=true %}" loading="lazy">
+              <figcaption>{% include t.html v=g.caption %}</figcaption>
+            </figure>
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
       </div>
     </section>
 
@@ -212,15 +245,6 @@
             </aside>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ Interlude ============ -->
-    <section class="interlude">
-      <div class="container">
-        <blockquote data-reveal>
-          <p>{% include t.html v=c.quote %}</p>
-        </blockquote>
       </div>
     </section>
 

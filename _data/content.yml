@@ -111,6 +111,20 @@ hero:
   button:
     en: "Explore my research"
     es: "Conoce mi investigación"
+  # A short recording that plays from the button next to the song trace.
+  # Upload the audio (MP3, about 10 seconds) to assets/audio and put its
+  # file name in "file". Leave file empty ("") to hide the button.
+  # "credit" names the recordist and licence; it may contain a link like
+  # [XC123456](https://xeno-canto.org/123456).
+  audio:
+    file: ""
+    play:
+      en: "Play the song of a Mexican Whip-poor-will"
+      es: "Escuchar el canto del tapacamino cuerporruín mexicano"
+    pause: { en: "Pause", es: "Pausar" }
+    credit:
+      en: ""
+      es: ""
 
 
 # ---------------------------------------------------------------------
@@ -120,12 +134,16 @@ news:
   kicker: { en: "Latest news", es: "Noticias recientes" }
   feature:
     title:
-      en: "Full scholarship for a research stay at the University of Illinois Urbana-Champaign"
-      es: "Beca completa para una estancia de investigación en la Universidad de Illinois Urbana-Champaign"
+      en: "Research stay at the Ward Lab, University of Illinois Urbana-Champaign"
+      es: "Estancia de investigación en el Ward Lab, Universidad de Illinois Urbana-Champaign"
     text:
-      en: "I have been awarded a full scholarship for a one-month doctoral research stay at the University of Illinois Urbana-Champaign, working with Dr. Ward. The visit builds on the bird telemetry and antenna installation training I completed at Illinois in 2024."
-      es: "Obtuve una beca completa para realizar una estancia doctoral de investigación de un mes en la Universidad de Illinois Urbana-Champaign, con el Dr. Ward. La visita da continuidad a la capacitación en telemetría de aves e instalación de antenas que realicé en Illinois en 2024."
+      en: "I have been awarded a full scholarship for a one-month doctoral research stay in September 2026 at the Ward Lab at the University of Illinois Urbana-Champaign."
+      es: "Obtuve una beca completa para realizar una estancia doctoral de investigación de un mes, en septiembre de 2026, en el Ward Lab de la Universidad de Illinois Urbana-Champaign."
   items:
+    - year: 2025
+      text:
+        en: "November: completed a one-month exchange program for visiting PhD researchers at the University of Illinois Urbana-Champaign."
+        es: "Noviembre: concluí un programa de intercambio de un mes para investigadores doctorales visitantes en la Universidad de Illinois Urbana-Champaign."
     - year: 2025
       text:
         en: "Presented *“Vocal activity and prey availability in two nightjar species (Aves: Caprimulgidae) in Mexico’s Neotropical Highlands”* at ATBC 2025."
@@ -134,10 +152,25 @@ news:
       text:
         en: "Gave the talk *“Singing in the moonlight”* at the Global Nightjar Network meeting."
         es: "Impartí la charla *“Singing in the moonlight”* en la reunión de la Global Nightjar Network."
-    - year: 2024
-      text:
-        en: "Completed field techniques training for wildlife studies at UNAM’s Chamela Biological Station."
-        es: "Concluí la capacitación en técnicas de campo para estudios de fauna silvestre en la Estación de Biología Chamela de la UNAM."
+
+  # Photos shown under the news, newest first. Upload each photo to
+  # assets/img and put its file name in "image"; a photo with image: ""
+  # is not shown. Photos look best in landscape, 4:3 (e.g. 1600 × 1200 px).
+  gallery:
+    - image: ""
+      alt:
+        en: "Dayane holding her certificate of completion beside two fellow students and a professor, in front of the flags of the United States and Mexico."
+        es: "Dayane con su certificado de finalización junto a dos compañeros y una profesora, frente a las banderas de Estados Unidos y México."
+      caption:
+        en: "November 2025 · One-month exchange program for visiting PhD researchers, University of Illinois Urbana-Champaign"
+        es: "Noviembre de 2025 · Programa de intercambio de un mes para investigadores doctorales visitantes, Universidad de Illinois Urbana-Champaign"
+    - image: ""
+      alt:
+        en: "Dayane photographing a nightjar specimen under a studio lamp in a museum collection."
+        es: "Dayane fotografiando un espécimen de tapacamino bajo una lámpara de estudio en una colección de museo."
+      caption:
+        en: "2025 · Photographing nightjar specimens at the Field Museum, Chicago, during the Illinois visit"
+        es: "2025 · Fotografiando especímenes de tapacaminos en el Field Museum de Chicago durante la visita a Illinois"
 
 
 # ---------------------------------------------------------------------
@@ -207,12 +240,6 @@ about:
     meetings: { en: "scientific meetings since", es: "reuniones científicas desde" }
     courses: { en: "courses & workshops", es: "cursos y talleres" }
     awards: { en: "awards & scholarships", es: "premios y becas" }
-
-
-# Quote band between About and Research.
-quote:
-  en: "By day, nightjars vanish into the leaf litter. By night, their songs give them away. That is where my work begins: *listening*."
-  es: "De día, los tapacaminos desaparecen entre la hojarasca. De noche, sus cantos los delatan. Ahí comienza mi trabajo: *escuchar*."
 
 
 # ---------------------------------------------------------------------
@@ -422,14 +449,21 @@ awards:
   title: { en: "Support along the way", es: "Apoyos en el camino" }
   # "highlight: true" shows the item with a gold "New" style.
   items:
-    - when: { en: "New", es: "Nuevo" }
+    - when: "2026"
       highlight: true
       title:
-        en: "Full scholarship for a one-month doctoral research stay"
-        es: "Beca completa para una estancia doctoral de investigación de un mes"
+        en: "Technological Development and Innovation Projects for IPN Students grant"
+        es: "Proyectos de Desarrollo Tecnológico o Innovación para alumnas y alumnos en el IPN"
       where:
-        en: "University of Illinois Urbana-Champaign · hosted by Dr. Ward"
-        es: "Universidad de Illinois Urbana-Champaign · anfitrión: Dr. Ward"
+        en: "*Proyectos de Desarrollo Tecnológico o Innovación para alumnas y alumnos en el IPN* · funded the September 2026 research stay at the Ward Lab, University of Illinois Urbana-Champaign"
+        es: "Instituto Politécnico Nacional · financió la estancia de investigación de septiembre de 2026 en el Ward Lab, Universidad de Illinois Urbana-Champaign"
+    - when: "2025"
+      title:
+        en: "Technological Development and Innovation Projects for IPN Students grant"
+        es: "Proyectos de Desarrollo Tecnológico o Innovación para alumnas y alumnos en el IPN"
+      where:
+        en: "*Proyectos de Desarrollo Tecnológico o Innovación para alumnas y alumnos en el IPN* · funded the November 2025 exchange program at the University of Illinois Urbana-Champaign"
+        es: "Instituto Politécnico Nacional · financió el programa de intercambio de noviembre de 2025 en la Universidad de Illinois Urbana-Champaign"
     - when: { en: "2023 – present", es: "2023 – actualidad" }
       title:
         en: "National Graduate Studies Scholarship, PhD"

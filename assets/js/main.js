@@ -39,6 +39,29 @@
     });
   });
 
+  // Play/pause the bird song next to the song trace.
+  var song = document.querySelector('.song--playable');
+  if (song) {
+    var songBtn = song.querySelector('.song__btn');
+    var songAudio = song.querySelector('.song__audio');
+    var setPlaying = function (on) {
+      song.classList.toggle('is-playing', on);
+      songBtn.setAttribute('aria-pressed', String(on));
+      songBtn.setAttribute('aria-label', on ? songBtn.dataset.pause : songBtn.dataset.play);
+    };
+    songBtn.addEventListener('click', function () {
+      if (songAudio.paused) {
+        var p = songAudio.play();
+        if (p && p.then) p.then(function () { setPlaying(true); }, function () {});
+        else setPlaying(true);
+      } else {
+        songAudio.pause();
+      }
+    });
+    songAudio.addEventListener('pause', function () { setPlaying(false); });
+    songAudio.addEventListener('ended', function () { songAudio.currentTime = 0; });
+  }
+
   // Current year in the footer.
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
