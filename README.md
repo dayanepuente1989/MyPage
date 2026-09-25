@@ -8,14 +8,15 @@ site updates itself within a minute or two. Nothing needs to be installed.
 
 ## Publish with GitHub Pages
 
-1. On GitHub, open the repository's **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Pick the `main` branch and the `/ (root)` folder, then click **Save**.
-4. The site will be at `https://<username>.github.io/<repository-name>/`
-   and the Spanish version at `…/<repository-name>/es/`.
+The site is published from the `main` branch (**Settings → Pages**: "Deploy from a branch",
+`main`, `/ (root)`). Because the repository is named `dayanepuente1989.github.io`, the site
+has the short address:
 
-To change the address, rename the repository (**Settings → General → Repository name**).
-The site uses relative links, so nothing else needs to change.
+- English: https://dayanepuente1989.github.io/
+- Spanish: https://dayanepuente1989.github.io/es/
+
+The site uses relative links, so it also works unchanged if the repository is ever renamed
+(it then moves to `https://dayanepuente1989.github.io/<new-name>/`).
 
 ## Changing text
 
