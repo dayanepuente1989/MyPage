@@ -117,14 +117,14 @@ hero:
   # "credit" names the recordist and licence; it may contain a link like
   # [XC123456](https://xeno-canto.org/123456).
   audio:
-    file: ""
+    file: "assets/audio/mexican-whip-poor-will-XC1083472.mp3"
     play:
       en: "Play the song of a Mexican Whip-poor-will"
       es: "Escuchar el canto del tapacamino cuerporruín mexicano"
     pause: { en: "Pause", es: "Pausar" }
     credit:
-      en: ""
-      es: ""
+      en: "Song of the Mexican Whip-poor-will · recording [XC1083472](https://xeno-canto.org/1083472) from xeno-canto"
+      es: "Canto del tapacamino cuerporruín mexicano · grabación [XC1083472](https://xeno-canto.org/1083472) de xeno-canto"
 
 
 # ---------------------------------------------------------------------
